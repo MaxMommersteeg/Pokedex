@@ -1,0 +1,23 @@
+<ion-view title="My Pokémons">
+    <ion-content padding="true" has-tabs="true">
+
+        <div class="row">
+            <div class="col-100">
+                <h4><span ng-bind="user.firstname"></span> <span ng-bind="user.lastname"></span>'s Pokémons</h4>
+            </div>
+        </div>
+
+        <ion-list overflow-scroll="true">
+            <div class="list card">
+            <ion-item ng-repeat="pokemon in mypokemons" type="item-text-wrap" href="#/tab/pokemon/{{pokemon.name}}">
+                <div class="col-90">
+                    <h3 class="pokemon-name"><span ng-bind="pokemon.name"></span></h3>
+                    <p>Catched on <span ng-bind="pokemon.catchdate"></span></p>
+                <ion-option-button ng-click="showPokemon(pokemon.name)" class="button-positive">Show</ion-option-button>
+                <ion-option-button ng-click="showPokemonOnWeb(pokemon.name)" class="button-balanced">Web</ion-option-button>
+            </ion-item>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
